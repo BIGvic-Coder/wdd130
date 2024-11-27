@@ -4,8 +4,8 @@
   --secondary-color: #ff6600; /* orange */
   --text-color: #333333; /* dark text */
   --background-color: #f4f4f4; /* light background */
-  --font-primary: 'Roboto', sans-serif;
-  --font-secondary: 'Open Sans', sans-serif;
+  --font-primary: "Roboto", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
 }
 
 /* General Styles */
@@ -21,45 +21,70 @@ a {
   color: var(--primary-color);
 }
 
+/* Header with CSS Grid */
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
   background-color: var(--primary-color);
   padding: 20px;
 }
 
-header .logo {
-  width: 150px;
+header .logo-container {
+  display: flex;
+  align-items: center;
 }
 
-header nav a {
+header .logo {
+  width: 150px;
+  margin-right: 10px;
+}
+
+header h1 {
+  font-family: var(--font-secondary);
   color: white;
+}
+
+header nav {
+  justify-self: end;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav ul li {
   margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
   font-family: var(--font-secondary);
   font-weight: 600;
 }
 
-/* Main Section */
+/* Hero Section */
 .hero {
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  gap: 20px;
   height: 400px;
-  background: url('images/rafting-hero.jpg') no-repeat center center/cover;
+  background: url("images/rafting-hero.jpg") no-repeat center center/cover;
 }
 
 .hero h1 {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   font-size: 3rem;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   font-family: var(--font-secondary);
-}
-
-main {
-  padding: 20px;
 }
 
 /* Article */
@@ -103,6 +128,30 @@ section img {
   height: auto;
   margin-top: 10px;
   border-radius: 8px;
+}
+
+/* Adventures Section */
+.adventure-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.adventure-images figure {
+  text-align: center;
+}
+
+.adventure-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.adventure-images figcaption {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  color: var(--primary-color);
 }
 
 /* Footer */
