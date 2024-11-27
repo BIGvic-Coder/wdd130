@@ -1,0 +1,128 @@
+/* Define CSS variables */
+:root {
+  --primary-color: #0066cc; /* blue */
+  --secondary-color: #ff6600; /* orange */
+  --text-color: #333333; /* dark text */
+  --background-color: #f4f4f4; /* light background */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Open Sans', sans-serif;
+}
+
+/* General Styles */
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 20px;
+}
+
+header .logo {
+  width: 150px;
+}
+
+header nav a {
+  color: white;
+  margin: 0 15px;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+/* Main Section */
+.hero {
+  position: relative;
+  height: 400px;
+  background: url('images/rafting-hero.jpg') no-repeat center center/cover;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family: var(--font-secondary);
+}
+
+main {
+  padding: 20px;
+}
+
+/* Article */
+article {
+  display: flex;
+  margin-top: 20px;
+}
+
+article img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+article p {
+  flex: 1;
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Sections */
+section {
+  margin-top: 40px;
+}
+
+section h2 {
+  font-family: var(--font-secondary);
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+section img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+footer a {
+  margin: 0 10px;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+}
