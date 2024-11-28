@@ -70,10 +70,17 @@ header nav ul li a {
 .hero {
   /* position: relative; */
   display: flex;
+  gap: 30px;
   align-items: center;
-  gap: 20px;
   height: 400px;
-  background: url("images/rafting-hero.jpg") no-repeat center center/cover;
+  background: url("images/rafting-hero.jpg") no-repeat center center/cover,
+    linear-gradient(rgb(70, 125, 228), white);
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
 }
 
 .hero h1 {
@@ -85,6 +92,11 @@ header nav ul li a {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   font-family: var(--font-secondary);
+}
+
+.hero-image {
+  border-radius: 10px;
+  mix-blend-mode: luminosity;
 }
 
 /* Article */
