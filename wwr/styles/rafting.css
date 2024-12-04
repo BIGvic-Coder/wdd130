@@ -68,7 +68,6 @@ header nav ul li a {
 
 /* Hero Section */
 .hero {
-  /* position: relative; */
   display: flex;
   gap: 30px;
   align-items: center;
@@ -84,10 +83,6 @@ header nav ul li a {
 }
 
 .hero h1 {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   font-size: 3rem;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -186,4 +181,114 @@ footer img {
   width: 40px;
   height: 40px;
   margin: 0 10px;
+}
+
+/* Contact Page Additions */
+
+/* Company Information */
+.company-info {
+  margin-bottom: 40px;
+}
+
+.company-info .map iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+
+/* Team Profiles */
+.team-profiles {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-profiles figure {
+  text-align: center;
+}
+
+.team-profiles img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.team-profiles figcaption {
+  font-family: var(--font-secondary);
+  color: var(--text-color);
+}
+
+/* Contact Form */
+.contact-form {
+  margin-top: 40px;
+}
+
+.contact-form form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: darkorange;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+fieldset legend {
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .adventure-images {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-profiles {
+    flex-direction: column;
+  }
+
+  .contact-form form {
+    width: 90%;
+  }
 }
