@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Get in touch with White Water Rafting for inquiries, reservations, and more." />
+    <meta
+      name="description"
+      content="Get in touch with White Water Rafting. Contact us for any inquiries or more information about our trips."
+    />
     <title>Contact Us - White Water Rafting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/rafting.css" />
+    <!-- Include Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
   </head>
   <body>
     <header>
       <div class="logo-container">
-        <img src="images/download.png" alt="White Water Rafting Logo" class="logo" />
+        <img
+          src="images/download.png"
+          alt="White Water Rafting Logo"
+          class="logo"
+        />
         <h1>White Water Rafting</h1>
       </div>
       <nav>
@@ -26,41 +41,37 @@
 
     <main>
       <h1>Contact Us</h1>
-      <section class="company-info">
-        <h2>Our Location</h2>
-        <p>Address: 123 Rapids Drive, Adventure City, EX 45678</p>
-        <p>Phone: +1 (555) 555-RAFT</p>
-        <p>Email: <a href="mailto:info@whitewaterrafting.com">info@whitewaterrafting.com</a></p>
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?q=White+Water+Rafting&key=YOUR_NEW_API_KEY"
-            width="100%"
-            height="400"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+
+      <section class="contact-info">
+        <p>
+          If you have any questions, feel free to reach out to us using the form
+          below.
+        </p>
+        <!-- Contact Form Section -->
+        <div class="contact-form">
+          <form action="submit-form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </section>
 
-      <section class="contact-form">
-        <h2>Send Us a Message</h2>
-        <form action="#" method="post">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <label
-            ><input type="checkbox" name="newsletter" /> Subscribe to our newsletter</label
-          >
-
-          <button type="submit">Submit</button>
-        </form>
+      <!-- OpenStreetMap Section -->
+      <section class="map-section">
+        <h2>Our Location</h2>
+        <div id="map" style="height: 400px"></div>
       </section>
     </main>
 
@@ -69,4 +80,26 @@
       <div class="social-links">
         <a href="https://facebook.com" target="_blank">Facebook</a> |
         <a href="https://twitter.com" target="_blank">Twitter</a> |
-        <a href="https://instagram.com" target="_blank">Instagram</a
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+      </div>
+    </footer>
+
+    <!-- Include Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      var map = L.map("map").setView([37.7749, -122.4194], 13); // Latitude and Longitude (Example: San Francisco)
+
+      // OpenStreetMap Tile Layer
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Add a Marker to the Map
+      L.marker([37.7749, -122.4194])
+        .addTo(map)
+        .bindPopup("White Water Rafting Location")
+        .openPopup();
+    </script>
+  </body>
+</html>
